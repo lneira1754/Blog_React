@@ -1,0 +1,28 @@
+/* OVERRIDES ESPECÍFICOS PARA PRIMEREACT */
+
+/* Reset de transparencias en todos los componentes */
+.p-component-overlay {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: none !important;
+}
+
+/* Fuerza fondos sólidos en todos los overlays */
+.p-menu-overlay,
+.p-tieredmenu-overlay,
+.p-menubar-overlay,
+.p-dropdown-overlay,
+.p-multiselect-overlay,
+.p-overlaypanel,
+.p-dialog,
+.p-sidebar {
+  backdrop-filter: none !important;
+  background: var(--surface-overlay) !important;
+  opacity: 1 !important;
+}
+
+/* Asegura que el texto sea legible */
+.p-menuitem-text,
+.p-dropdown-label,
+.p-multiselect-label {
+  color: var(--text-color) !important;
+}

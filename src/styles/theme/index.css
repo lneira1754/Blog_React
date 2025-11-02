@@ -1,0 +1,29 @@
+/* TEMA PRINCIPAL */
+@import url('./variables.css');
+@import url('./components.css');
+
+/* Estilos base */
+body {
+  background-color: var(--surface-ground);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+/* Utilidades de color */
+.bg-primary { background-color: var(--primary-500) !important; }
+.bg-surface { background-color: var(--surface-card) !important; }
+.bg-ground { background-color: var(--surface-ground) !important; }
+
+.text-primary { color: var(--primary-500) !important; }
+.text-surface { color: var(--text-color) !important; }
+.text-secondary { color: var(--text-color-secondary) !important; }
+
+/* Utilidades de borde */
+.border-surface { border-color: var(--surface-border) !important; }
+.rounded { border-radius: var(--border-radius) !important; }
+
+/* Utilidades de sombra */
+.shadow-1 { box-shadow: var(--shadow-1) !important; }
+.shadow-2 { box-shadow: var(--shadow-2) !important; }
+.shadow-3 { box-shadow: var(--shadow-3) !important; }

@@ -1,0 +1,85 @@
+/* COMPONENTES PERSONALIZADOS */
+
+/* Cards */
+.p-card {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow 0.2s;
+}
+
+.p-card:hover {
+  box-shadow: var(--shadow-2);
+}
+
+/* Botones */
+.p-button {
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.p-button-primary {
+  background: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
+.p-button-primary:hover {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+/* Inputs */
+.p-inputtext {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--surface-border);
+  transition: all 0.2s;
+}
+
+.p-inputtext:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 2px var(--primary-100);
+}
+
+/* Menús desplegables - SIN TRANSPARENCIA */
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-submenu-list,
+.p-dropdown-panel,
+.p-multiselect-panel {
+  background: var(--surface-overlay) !important;
+  border: 1px solid var(--surface-border) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-3) !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+.p-menuitem-content,
+.p-dropdown-item,
+.p-multiselect-item {
+  background: var(--surface-overlay) !important;
+  color: var(--text-color) !important;
+}
+
+.p-menuitem-content:hover,
+.p-dropdown-item:hover,
+.p-multiselect-item:hover {
+  background: var(--surface-hover) !important;
+  color: var(--text-color) !important;
+}
+
+/* DataTable */
+.p-datatable .p-datatable-thead > tr > th {
+  background: var(--surface-section);
+  color: var(--text-color);
+  border-color: var(--surface-border);
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background: var(--surface-card);
+  color: var(--text-color);
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: var(--surface-hover);
+}

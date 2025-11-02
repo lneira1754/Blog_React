@@ -1,0 +1,559 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #495057;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* ESTILOS DE EMERGENCIA - Se aplican si PrimeReact no carga */
+
+/* Cards */
+.p-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+/* Botones */
+.p-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.p-button:hover {
+  background: #0056b3;
+}
+
+.p-button.p-button-outlined {
+  background: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
+.p-button.p-button-outlined:hover {
+  background: #007bff;
+  color: white;
+}
+
+.p-button.p-button-text {
+  background: transparent;
+  color: #007bff;
+  border: none;
+}
+
+.p-button.p-button-text:hover {
+  background: rgba(0,123,255,0.1);
+}
+
+.p-button.p-button-danger {
+  background: #dc3545;
+}
+
+.p-button.p-button-danger:hover {
+  background: #c82333;
+}
+
+/* Inputs */
+.p-inputtext {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.p-inputtext:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Grid system
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+  */
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* Spacing utilities */
+.m-0 { margin: 0; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-color-secondary { color: #6c757d; }
+.font-bold { font-weight: bold; }
+.font-semibold { font-weight: 600; }
+
+/* Navbar styles */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+/* Estilos específicos para el grid de posts */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+/*
+.col-12 {
+  grid-column: span 12;
+}*/
+
+/* Responsive grid 
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .md\:col-6 {
+    grid-column: span 6;
+  }
+}
+  */
+/*
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .lg\:col-4 {
+    grid-column: span 4;
+  }
+}*/
+
+/* Mejoras para las cards */
+.h-full {
+  height: 100%;
+}
+
+.shadow-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.shadow-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.hover\:shadow-3:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transform: translateY(-2px);
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-900 {
+  color: var(--text-color) !important;
+}
+/*
+
+.grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.grid > [class*="col-"] {
+  display: flex !important;
+}
+
+.p-card {
+  width: 100% !important;
+}*/
+/* DEJA SOLO ESTO PARA EL GRID: */
+.grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin: 0 -0.5rem !important;
+}
+
+.grid > [class*="col-"] {
+  padding: 0.5rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Forzar 3 columnas en desktop */
+@media (min-width: 992px) {
+  .grid > .lg\:col-4 {
+    flex: 0 0 33.3333% !important;
+    max-width: 33.3333% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid > .md\:col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+.grid > .col-12 {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+/* Versión con gris claro */
+.p-dropdown-panel,
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-submenu-list,
+.p-multiselect-panel,
+.p-confirm-dialog,
+.p-dialog .p-dialog-content,
+.p-dialog .p-dialog-header {
+  background: #f8fafc !important; /* Gris muy claro */
+  border: 1px solid #e2e8f0 !important;
+}
+
+.p-dropdown-items,
+.p-multiselect-items,
+.p-menuitem-content {
+  background: #f8fafc !important;
+}
+
+.p-dropdown-item,
+.p-multiselect-item,
+.p-menuitem-text {
+  color: #334155 !important;
+}
+
+.p-dropdown-item:hover,
+.p-multiselect-item:hover,
+.p-menuitem-content:hover {
+  background: #e2e8f0 !important;
+}
+/* ESTILOS ULTRA-FUERTES PARA ELIMINAR TRANSPARENCIAS */
+
+/* Overlay - hacer sólido */
+.p-component-overlay,
+.p-menu-overlay,
+.p-tieredmenu-overlay,
+.p-menubar-overlay {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: none !important;
+}
+
+/* Menús desplegables - fondo completamente sólido */
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-submenu-list,
+.p-menubar .p-submenu-list,
+.p-tieredmenu .p-tieredmenu-root-list,
+.p-menu .p-menu-list {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Items de menú - completamente sólidos */
+.p-menubar .p-menuitem-content,
+.p-tieredmenu .p-menuitem-content,
+.p-menu .p-menuitem-content {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+.p-menubar .p-menuitem-content:hover,
+.p-tieredmenu .p-menuitem-content:hover,
+.p-menu .p-menuitem-content:hover {
+  background: #f3f4f6 !important;
+  background-color: #f3f4f6 !important;
+}
+
+/* Texto de menús */
+.p-menubar .p-menuitem-text,
+.p-tieredmenu .p-menuitem-text,
+.p-menu .p-menuitem-text {
+  color: #374151 !important;
+}
+
+/* Dropdowns */
+.p-dropdown-panel,
+.p-multiselect-panel {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.p-dropdown-items,
+.p-multiselect-items {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.p-dropdown-item,
+.p-multiselect-item {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.p-dropdown-item:hover,
+.p-multiselect-item:hover {
+  background: #f3f4f6 !important;
+  background-color: #f3f4f6 !important;
+}
+
+/* ESTILOS PARA TOASTS (NOTIFICACIONES) */
+.p-toast {
+  z-index: 10001 !important;
+}
+
+.p-toast .p-toast-message {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  color: #374151 !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Toast de éxito */
+.p-toast .p-toast-message.p-toast-message-success {
+  border-left: 4px solid #10b981 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon {
+  color: #10b981 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-content .p-toast-summary {
+  color: #065f46 !important;
+  font-weight: 600 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-content .p-toast-detail {
+  color: #374151 !important;
+}
+
+/* Toast de error */
+.p-toast .p-toast-message.p-toast-message-error {
+  border-left: 4px solid #ef4444 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
+  color: #ef4444 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-content .p-toast-summary {
+  color: #991b1b !important;
+  font-weight: 600 !important;
+}
+
+/* Toast de advertencia */
+.p-toast .p-toast-message.p-toast-message-warn {
+  border-left: 4px solid #f59e0b !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon {
+  color: #f59e0b !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-content .p-toast-summary {
+  color: #92400e !important;
+  font-weight: 600 !important;
+}
+
+/* Toast de información */
+.p-toast .p-toast-message.p-toast-message-info {
+  border-left: 4px solid #3b82f6 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
+  color: #3b82f6 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-content .p-toast-summary {
+  color: #1e40af !important;
+  font-weight: 600 !important;
+}
+
+/* Icono de cerrar */
+.p-toast .p-toast-message .p-toast-icon-close {
+  color: #6b7280 !important;
+}
+
+.p-toast .p-toast-message .p-toast-icon-close:hover {
+  color: #374151 !important;
+  background: #f3f4f6 !important;
+}
+
+/* ESTILOS PARA CONFIRM DIALOG */
+.p-confirm-dialog {
+  z-index: 10000 !important;
+  background: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.p-dialog-mask {
+  z-index: 9999 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: none !important;
+}
+
+.p-dialog .p-dialog-content {
+  background: white !important;
+  color: #374151 !important;
+  padding: 1.5rem !important;
+}
+
+.p-dialog .p-dialog-header {
+  background: white !important;
+  color: #374151 !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+  font-weight: 600 !important;
+  color: #111827 !important;
+}
+
+.p-dialog .p-dialog-footer {
+  background: white !important;
+  border-top: 1px solid #e5e7eb !important;
+  padding: 1rem 1.5rem !important;
+}
+
+/* Botones del dialog */
+.p-confirm-dialog .p-button {
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+}
+
+.p-confirm-dialog .p-button.p-button-danger {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+}
+
+.p-confirm-dialog .p-button.p-button-danger:hover {
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
