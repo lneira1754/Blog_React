@@ -189,6 +189,7 @@ const PostForm = () => {
                 onChange={handleChange}
                 className="mr-2"
               />
+              {/* Intento de hacer borradores de publicaciones, no esta terminado (no funciona) */}
               <label htmlFor="is_published" className="font-semibold">
                 Publicar inmediatamente
               </label>

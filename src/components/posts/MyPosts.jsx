@@ -4,6 +4,7 @@ import PostCard from './PostCard';
 import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 import { Toast } from 'primereact/toast';
+import { ConfirmDialog } from 'primereact/confirmdialog'; // Importar aquí
 import { useRef } from 'react';
 import Loading from '../common/Loading';
 import ErrorMessage from '../common/ErrorMessage';
@@ -18,6 +19,7 @@ const MyPosts = () => {
   useEffect(() => {
     loadMyPosts();
   }, []);
+
   const loadMyPosts = async () => {
     try {
       setLoading(true);
@@ -30,9 +32,11 @@ const MyPosts = () => {
       setLoading(false);
     }
   };
+
   const handleEdit = (postId) => {
     navigate(`/posts/edit/${postId}`);
   };
+
   const handleDelete = async (postId) => {
     try {
       await postsService.deletePost(postId);
@@ -52,14 +56,19 @@ const MyPosts = () => {
       });
     }
   };
+
   const handleView = (postId) => {
     navigate(`/posts/${postId}`);
   };
+
   if (loading) return <Loading message="Cargando tus publicaciones..." />;
   if (error) return <ErrorMessage message={error} />;
+
   return (
     <div>
       <Toast ref={toast} />
+      <ConfirmDialog /> {/* Solo uno aquí */}
+      
       <div className="flex justify-content-between align-items-center mb-4">
         <h1>Mis Publicaciones</h1>
         <Button 
@@ -68,6 +77,7 @@ const MyPosts = () => {
           onClick={() => navigate('/posts/create')}
         />
       </div>
+      
       {posts.length === 0 ? (
         <div className="text-center p-4">
           <i className="pi pi-inbox text-6xl text-color-secondary mb-3"></i>
@@ -96,4 +106,5 @@ const MyPosts = () => {
     </div>
   );
 };
+
 export default MyPosts;

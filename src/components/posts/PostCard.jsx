@@ -8,17 +8,21 @@ import { formatDate } from '../../utils/helpers';
 
 const PostCard = ({ post, onEdit, onDelete, onView }) => {
   const { user } = useAuth();
-  const canEdit = user?.role === 'admin' || post.author_id === user?.id;
+  
+  // Solo el autor puede editar
+  const canEdit = post.author_id === user?.id;
+  
+  // Solo el autor o admin pueden eliminar (NO moderador)
   const canDelete = user?.role === 'admin' || post.author_id === user?.id;
 
   const confirmDelete = () => {
     confirmDialog({
-      message: '¿Estás seguro de eliminar esta publicación?',
+      message: '¿Estás seguro de eliminar esta publicación? Esta acción no se puede deshacer.',
       header: 'Confirmar Eliminación',
       icon: 'pi pi-exclamation-triangle',
       acceptClassName: 'p-button-danger',
       accept: () => onDelete(post.id),
-      rejectClassName: 'p-button-secondary'
+      reject: () => {}
     });
   };
 

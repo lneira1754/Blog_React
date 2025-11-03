@@ -5,6 +5,7 @@ import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { Toast } from 'primereact/toast';
+import { ConfirmDialog } from 'primereact/confirmdialog';
 import { useRef } from 'react';
 import Loading from '../common/Loading';
 import ErrorMessage from '../common/ErrorMessage';
@@ -68,16 +69,18 @@ const PostList = () => {
   return (
     <div>
       <Toast ref={toast} />
-        <div className="flex justify-content-between align-items-center mb-4">
-          <h1>Publicaciones</h1>
-          {isAuthenticated && (
-            <Button 
-              label="Crear Publicación" 
-              icon="pi pi-plus" 
-              onClick={() => navigate('/posts/create')}
-            />
-          )}
-        </div>
+      <ConfirmDialog /> {/* Solo uno aquí */}
+      
+      <div className="flex justify-content-between align-items-center mb-4">
+        <h1>Publicaciones</h1>
+        {isAuthenticated && (
+          <Button 
+            label="Crear Publicación" 
+            icon="pi pi-plus" 
+            onClick={() => navigate('/posts/create')}
+          />
+        )}
+      </div>
       
       {posts.length === 0 ? (
         <div className="text-center p-4">
