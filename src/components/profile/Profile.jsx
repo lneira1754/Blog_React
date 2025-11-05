@@ -107,24 +107,6 @@ const Profile = () => {
             </div>
           </Card>
         </div>
-
-        <div className="col-12 md:col-4">
-          <Card title="Estadísticas Personales" className="h-full">
-            <div className="flex flex-column gap-3 text-center">
-              <div className="p-3 border-round bg-blue-50">
-                <i className="pi pi-file text-4xl text-blue-500 mb-2"></i>
-                <h3 className="text-2xl font-bold mb-1">0</h3>
-                <p className="text-color-secondary">Posts Publicados</p>
-              </div>
-              
-              <div className="p-3 border-round bg-green-50">
-                <i className="pi pi-comments text-4xl text-green-500 mb-2"></i>
-                <h3 className="text-2xl font-bold mb-1">0</h3>
-                <p className="text-color-secondary">Comentarios</p>
-              </div>
-            </div>
-          </Card>
-        </div>
       </div>
     </div>
   );
