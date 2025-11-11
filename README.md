@@ -1,16 +1,50 @@
-# React + Vite
+# 🚀 Proyecto Frontend — React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación **frontend desarrollada con React y Vite**, conectada a una API REST creada en **Flask**.  
+Forma parte de un sistema de blog simple que permite gestionar publicaciones y usuarios.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👥 Integrantes
 
-## React Compiler
+- **Leonardo Neira** — [@lneira1754](https://github.com/lneira1754)  
+- **Lucas Pérez** — [@LucasJavierPerez](https://github.com/LucasJavierPerez)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧩 Prerrequisitos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Antes de comenzar, asegúrate de tener instalado:
+
+- [Node.js](https://nodejs.org/) **v16 o superior**
+- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/) como gestor de paquetes
+- API Backend en Flask disponible en:  
+  🔗 [Repositorio de la API](https://github.com/lneira1754/APIBlog)
+
+---
+
+## 📦 Instalación
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone <url-del-repositorio>
+   cd frontend
+
+2. **Instalar dependencias**
+
+    Con npm
+    npm install
+
+    O con yarn
+    yarn install
+
+## ⚙️ Configuración
+
+1. **Variables de entorno**
+
+    Crea un archivo .env en la raíz del proyecto con el siguiente contenido:
+    VITE_API_URL=http://localhost:5000/api
+    VITE_APP_NAME=MiBlog
+
+
