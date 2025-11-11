@@ -44,7 +44,21 @@ Antes de comenzar, asegúrate de tener instalado:
 1. **Variables de entorno**
 
     Crea un archivo .env en la raíz del proyecto con el siguiente contenido:
+
     VITE_API_URL=http://localhost:5000/api
+
     VITE_APP_NAME=MiBlog
+
+## 📁 Estructura del proyecto
+    frontend/
+├── src/
+│   ├── components/
+│   ├── contexts/
+│   ├── services/
+│   ├── utils/
+│   └── App.jsx
+├── package.json
+├── vite.config.js
+└── .env
 
 
