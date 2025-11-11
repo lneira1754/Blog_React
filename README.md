@@ -51,14 +51,22 @@ Antes de comenzar, asegúrate de tener instalado:
 
 ## 📁 Estructura del proyecto
     frontend/
-├── src/
-│   ├── components/
-│   ├── contexts/
-│   ├── services/
-│   ├── utils/
-│   └── App.jsx
-├── package.json
-├── vite.config.js
-└── .env
+    ├── src/
+    │   ├── components/
+    │   ├── contexts/
+    │   ├── services/
+    │   ├── utils/
+    │   └── App.jsx
+    ├── package.json
+    ├── vite.config.js
+    └── .env
+
+## ▶️ Ejecución
+
+    Con npm:
+    npm run dev
+
+    con yarn:
+    yarn dev
 
 
