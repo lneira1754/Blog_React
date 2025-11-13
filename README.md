@@ -1,72 +1,34 @@
-# 🚀 Proyecto Frontend — React + Vite
+# MiniBlog React
 
-Este proyecto es una aplicación **frontend desarrollada con React y Vite**, conectada a una API REST creada en **Flask**.  
-Forma parte de un sistema de blog simple que permite gestionar publicaciones y usuarios.
+Frontend en React (Vite + PrimeReact) para el sistema de mini blog con autenticación JWT, gestión de publicaciones y panel administrativo.
 
----
+## Integrantes
+- Leonardo Neira — GitHub: [lneira1754](https://github.com/lneira1754)
+- Pérez Lucas Javier — GitHub: [LucasJavierPerez](https://github.com/LucasJavierPerez)
 
-## 👥 Integrantes
+## Backend (API Flask)
+- Base URL en desarrollo: [`http://localhost:5000/api`](http://localhost:5000/api)
+- Asegúrate de tener el servidor Flask corriendo antes de iniciar el frontend. Ajusta `src/services/api.js` si usas otro host o puerto.
 
-- **Leonardo Neira** — [@lneira1754](https://github.com/lneira1754)  
-- **Lucas Pérez** — [@LucasJavierPerez](https://github.com/LucasJavierPerez)
-
----
-
-## 🧩 Prerrequisitos
-
-Antes de comenzar, asegúrate de tener instalado:
-
-- [Node.js](https://nodejs.org/) **v16 o superior**
-- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/) como gestor de paquetes
-- API Backend en Flask disponible en:  
-  🔗 [Repositorio de la API](https://github.com/lneira1754/APIBlog)
-
----
-
-## 📦 Instalación
-
-1. **Clonar el repositorio**
-
-   ```bash
-   git clone <url-del-repositorio>
-   cd frontend
-
+## Instalación y ejecución
+1. **Requisitos**
+   - Node.js 18+ y npm
+   - Backend Flask disponible en `http://localhost:5000/api`
 2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
+3. **Ejecutar en modo desarrollo**
+   ```bash
+   npm run dev
+   ```
+   - Vite abrirá la app en `http://localhost:3000`. El `vite.config.js` ya incluye un proxy para `/api` hacia `http://localhost:5000`; si prefieres usar el proxy, cambia `API_BASE_URL` en `src/services/api.js` a `/api`.
+4. **Build para producción**
+   ```bash
+   npm run build
+   ```
+   - El output listo para servir queda en `dist/`.
 
-    Con npm
-    npm install
-
-    O con yarn
-    yarn install
-
-## ⚙️ Configuración
-
-1. **Variables de entorno**
-
-    Crea un archivo .env en la raíz del proyecto con el siguiente contenido:
-
-    VITE_API_URL=http://localhost:5000/api
-
-    VITE_APP_NAME=MiBlog
-
-## 📁 Estructura del proyecto
-    frontend/
-    ├── src/
-    │   ├── components/
-    │   ├── contexts/
-    │   ├── services/
-    │   ├── utils/
-    │   └── App.jsx
-    ├── package.json
-    ├── vite.config.js
-    └── .env
-
-## ▶️ Ejecución
-
-    Con npm:
-    npm run dev
-
-    con yarn:
-    yarn dev
-
-
+## Notas
+- Las credenciales JWT se guardan en `localStorage`. Si cambias la clave o estructura del token del backend, actualiza `authService` (`src/services/auth.js`).
+- Revisa los mensajes de error del backend Flask si ves respuestas `500` en el frontend; suele imprimirse el traceback con la causa exacta.
